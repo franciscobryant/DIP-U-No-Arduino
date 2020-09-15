@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:onlinelearning/CoursePage.dart';
 import 'package:onlinelearning/ProjectPage.dart';
-import 'package:onlinelearning/ForumPage.dart';
+import 'package:onlinelearning/MainPage.dart';
 
-class MainPage extends StatelessWidget {
+class ForumPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: mainPage(),
+      home: forumPage(),
       routes: {
         '/coursePage': (context) => CoursePage(),
         '/projectPage': (context) => ProjectPage(),
-        '/forumPage': (context) => ForumPage(),
+        '/mainPage': (context) => MainPage(),
       },
     );
   }
 }
 
-class mainPage extends StatefulWidget {
+class forumPage extends StatefulWidget {
   @override
-  _mainPageState createState() => _mainPageState();
+  _forumPageState createState() => _forumPageState();
 }
 
-class _mainPageState extends State<mainPage> {
+class _forumPageState extends State<forumPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,67 +53,59 @@ class _mainPageState extends State<mainPage> {
             SizedBox(
               height: 25,
             ),
+            Text(
+              'What do you \nwant to \ntalk about?',
+              style: TextStyle(
+                  fontSize: 35, height: 1.3, fontWeight: FontWeight.w700),
+            ),
+            SizedBox(
+              height: 10,
+            ),
             Expanded(
               child: SingleChildScrollView(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    'What do you \nwant to \nlearn today?',
-                    style: TextStyle(
-                        fontSize: 35, height: 1.3, fontWeight: FontWeight.w700),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            courseWidget('Basics', 'Getting started on Arduino',
-                                'img1', Color(0xffff6a65), Color(0xffff5954)),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            courseWidget('Advanced', 'Master Arduino', 'img2',
-                                Color(0xffe9eefa), Colors.white),
-                          ],
-                        ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          courseWidget('Basics', 'Getting started on Arduino',
+                              'img1', Color(0xffff6a65), Color(0xffff5954)),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          courseWidget('Advanced', 'Master Arduino', 'img2',
+                              Color(0xffe9eefa), Colors.white),
+                        ],
                       ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            SizedBox(
-                              height: 50,
-                            ),
-                            courseWidget(
-                                'Intermediate',
-                                'Level up your skills!',
-                                'img3',
-                                Color(0xffe9eefa),
-                                Colors.white),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            courseWidget(
-                                'Microcontroller',
-                                'Learn more about them!',
-                                'img4',
-                                Color(0xffe9eefa),
-                                Colors.white),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              )),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.4,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          SizedBox(
+                            height: 50,
+                          ),
+                          courseWidget('Intermediate', 'Level up your skills!',
+                              'img3', Color(0xffe9eefa), Colors.white),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          courseWidget(
+                              'Microcontroller',
+                              'Learn more about them!',
+                              'img4',
+                              Color(0xffe9eefa),
+                              Colors.white),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ),
             Container(
               padding: EdgeInsets.all(20),
@@ -121,9 +113,12 @@ class _mainPageState extends State<mainPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   IconButton(
+                    onPressed: () {
+                      openMainPage();
+                    },
                     icon: Icon(
                       Icons.subscriptions,
-                      color: Color(0xff2657ce),
+                      color: Color(0xff2657ce).withOpacity(0.5),
                       size: 40,
                     ),
                   ),
@@ -138,12 +133,9 @@ class _mainPageState extends State<mainPage> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {
-                      openForumPage();
-                    },
                     icon: Icon(
                       Icons.account_circle,
-                      color: Color(0xff2657ce).withOpacity(0.5),
+                      color: Color(0xff2657ce),
                       size: 40,
                     ),
                   ),
@@ -248,7 +240,7 @@ class _mainPageState extends State<mainPage> {
     Navigator.pushNamed(context, '/projectPage');
   }
 
-  void openForumPage() {
-    Navigator.pushNamed(context, '/forumPage');
+  void openMainPage() {
+    Navigator.pushNamed(context, '/mainPage');
   }
 }

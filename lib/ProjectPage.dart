@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:onlinelearning/CoursePage.dart';
 import 'package:onlinelearning/MainPage.dart';
+import 'package:onlinelearning/ForumPage.dart';
 
 class ProjectPage extends StatelessWidget {
   @override
@@ -11,6 +12,7 @@ class ProjectPage extends StatelessWidget {
       routes: {
         '/coursePage': (context) => CoursePage(),
         '/mainPage': (context) => MainPage(),
+        '/forumPage': (context) => ForumPage(),
       },
     );
   }
@@ -52,7 +54,7 @@ class _projectPageState extends State<projectPage> {
               height: 25,
             ),
             Text(
-              'What do you \nwant to \nmake today?',
+              'What projects \ndo you want \nto make today?',
               style: TextStyle(
                   fontSize: 35, height: 1.3, fontWeight: FontWeight.w700),
             ),
@@ -132,6 +134,9 @@ class _projectPageState extends State<projectPage> {
                     ),
                   ),
                   IconButton(
+                    onPressed: () {
+                      openForumPage();
+                    },
                     icon: Icon(
                       Icons.account_circle,
                       color: Color(0xff2657ce).withOpacity(0.5),
@@ -237,5 +242,9 @@ class _projectPageState extends State<projectPage> {
 
   void openMainPage() {
     Navigator.pushNamed(context, '/mainPage');
+  }
+
+  void openForumPage() {
+    Navigator.pushNamed(context, '/forumPage');
   }
 }

@@ -14,125 +14,126 @@ class _CoursePageState extends State<CoursePage> {
     chosenImg = arguments['img'];
     chosenTitle = arguments['title'];
     return Scaffold(
-      backgroundColor: Color(0xfff4f6fd),
-      body: Container(
-        padding: EdgeInsets.only(top: 40, left: 30, right: 30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.only(bottom: 20),
-              padding: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                color: Color(0xffe1eaff),
-              ),
-              child: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(
-                  Icons.arrow_back_ios,
-                  color: Color(0xff2657ce),
-                ),
-              ),
-            ),
-            Text(
-              '$chosenTitle',
-              style: TextStyle(
-                color: Color(0xff2657ce),
-                fontSize: 27,
-              ),
-            ),
-            Text(
-              'Getting started',
-              style:
-                  TextStyle(color: Colors.black.withOpacity(0.6), fontSize: 20),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                color: Color(0xffff5954),
-              ),
-              child: Hero(
-                tag: '$chosenImg',
-                child: Container(
-                  height: 200,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
+        backgroundColor: Color(0xfff4f6fd),
+        body: Container(
+          padding: EdgeInsets.only(top: 40, left: 30, right: 30),
+          child: Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(bottom: 20),
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      color: Color(0xffe1eaff),
+                    ),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        color: Color(0xff2657ce),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    '$chosenTitle',
+                    style: TextStyle(
+                      color: Color(0xff2657ce),
+                      fontSize: 27,
+                    ),
+                  ),
+                  Text(
+                    'Getting started',
+                    style: TextStyle(
+                        color: Colors.black.withOpacity(0.6), fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(30)),
-                      image: DecorationImage(
-                        image: AssetImage('assets/image/$chosenImg.png'),
-                      )),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  'Course',
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w600,
+                      color: Color(0xffff5954),
+                    ),
+                    child: Hero(
+                      tag: '$chosenImg',
+                      child: Container(
+                        height: 200,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(30)),
+                            image: DecorationImage(
+                              image: AssetImage('assets/image/$chosenImg.png'),
+                            )),
+                      ),
+                    ),
                   ),
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
-                    color: Color(0xffd3defa),
+                  SizedBox(
+                    height: 20,
                   ),
-                  child: Row(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Container(
-                        width: 35,
-                        child: IconButton(
-                          icon: Icon(
-                            Icons.timer,
-                            color: Colors.blue,
-                          ),
+                      Text(
+                        'Course',
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
-                      Text(
-                        "3 Hours",
-                        style: TextStyle(color: Colors.black.withOpacity(0.7)),
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(15)),
+                          color: Color(0xffd3defa),
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              width: 35,
+                              child: IconButton(
+                                icon: Icon(
+                                  Icons.timer,
+                                  color: Colors.blue,
+                                ),
+                              ),
+                            ),
+                            Text(
+                              "3 Hours",
+                              style: TextStyle(
+                                  color: Colors.black.withOpacity(0.7)),
+                            )
+                          ],
+                        ),
                       )
                     ],
                   ),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    productListing(
-                        'Introduction', 'Introduction to Arduino', 'active'),
-                    productListing(
-                        'Hardware', 'Getting to know the Arduino', 'inactive'),
-                    productListing(
-                        'Arduino IDE', 'Place to program!', 'inactive'),
-                    productListing('Basic commands',
-                        'Running your first program', 'inactive')
-                  ],
-                ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Column(
+                    children: <Widget>[
+                      productListing(
+                          'Introduction', 'Introduction to Arduino', 'active'),
+                      productListing('Hardware', 'Getting to know the Arduino',
+                          'inactive'),
+                      productListing(
+                          'Arduino IDE', 'Place to program!', 'inactive'),
+                      productListing('Basic commands',
+                          'Running your first program', 'inactive')
+                    ],
+                  ),
+                ],
               ),
-            )
-          ],
-        ),
-      ),
-    );
+            ),
+          ),
+        ));
   }
 
   Column productListing(String title, String info, String activeOrInactive) {
