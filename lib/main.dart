@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlinelearning/MainPage.dart';
+import 'MainPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffff5954),
+      backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: <Widget>[
                 Container(
                   child: Text(
-                    "Online learning",
+                    "Start learning",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Container(
                   child: Text(
-                    "is not the next",
+                    "The basics of Arduino",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Container(
                   child: Text(
-                    "big thing,",
+                    "With U-No-Arduino!",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Container(
                   child: Text(
-                    "it is now the",
+                    "Now,",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Container(
                   child: Text(
-                    "BIG THING,",
+                    "You know Arduino!",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 40,
@@ -100,7 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/image/splash.png'),
+                        image:
+                            AssetImage('assets/image/arduino background.png'),
                         fit: BoxFit.cover)),
               ),
               Positioned(
