@@ -14,31 +14,29 @@ class _CoursePageState extends State<CoursePage> {
     chosenImg = arguments['img'];
     chosenTitle = arguments['title'];
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Container(
-          padding: EdgeInsets.all(5),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(20)),
-            color: Color(0xffe1eaff),
-          ),
-          child: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Icons.arrow_back_ios,
-              color: Color(0xff2657ce),
-            ),
-          ),
-        ),
-      ),
+      backgroundColor: Color(0xfff4f6fd),
       body: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.only(top: 40, left: 30, right: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(bottom: 20),
+              padding: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                color: Color(0xffe1eaff),
+              ),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: Color(0xff2657ce),
+                ),
+              ),
+            ),
             Text(
               '$chosenTitle',
               style: TextStyle(
@@ -47,7 +45,7 @@ class _CoursePageState extends State<CoursePage> {
               ),
             ),
             Text(
-              'Sarah Parknson',
+              'Getting started',
               style:
                   TextStyle(color: Colors.black.withOpacity(0.6), fontSize: 20),
             ),
@@ -104,7 +102,7 @@ class _CoursePageState extends State<CoursePage> {
                         ),
                       ),
                       Text(
-                        "3 Hours, 20 Min",
+                        "3 Hours",
                         style: TextStyle(color: Colors.black.withOpacity(0.7)),
                       )
                     ],
@@ -120,13 +118,13 @@ class _CoursePageState extends State<CoursePage> {
                 child: Column(
                   children: <Widget>[
                     productListing(
-                        'Introduction', 'Introduction of the course', 'active'),
-                    productListing('Language of Color',
-                        'Learn about the language of..', 'inactive'),
-                    productListing('Psychology of Color',
-                        'Learn about the psychology of..', 'inactive'),
-                    productListing('Language of Color',
-                        'Learn about the language of..', 'inactive')
+                        'Introduction', 'Introduction to Arduino', 'active'),
+                    productListing(
+                        'Hardware', 'Getting to know the Arduino', 'inactive'),
+                    productListing(
+                        'Arduino IDE', 'Place to program!', 'inactive'),
+                    productListing('Basic commands',
+                        'Running your first program', 'inactive')
                   ],
                 ),
               ),

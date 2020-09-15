@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:onlinelearning/CoursePage.dart';
-import 'package:onlinelearning/ProjectPage.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -10,7 +9,6 @@ class MainPage extends StatelessWidget {
       home: mainPage(),
       routes: {
         '/coursePage': (context) => CoursePage(),
-        '/projectPage': (context) => ProjectPage(),
       },
     );
   }
@@ -35,7 +33,7 @@ class _mainPageState extends State<mainPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "Hello Developers",
+                  "Hello Jessica!",
                   style: TextStyle(fontSize: 20, color: Colors.blueAccent),
                 ),
                 Container(
@@ -69,17 +67,13 @@ class _mainPageState extends State<mainPage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          courseWidget('Multimedia', 'Animation Course', 'img1',
-                              Color(0xffff6a65), Color(0xffff5954)),
+                          courseWidget('Basics', 'Getting started on Arduino',
+                              'img1', Color(0xffff6a65), Color(0xffff5954)),
                           SizedBox(
                             height: 20,
                           ),
-                          courseWidget(
-                              'Social Media',
-                              'Social Media Monitoring',
-                              'img2',
-                              Color(0xffe9eefa),
-                              Colors.white),
+                          courseWidget('Advanced', 'Master Arduino', 'img2',
+                              Color(0xffe9eefa), Colors.white),
                         ],
                       ),
                     ),
@@ -91,17 +85,17 @@ class _mainPageState extends State<mainPage> {
                           SizedBox(
                             height: 50,
                           ),
-                          courseWidget('Programming', 'Python for everybody',
+                          courseWidget('Intermediate', 'Level up your skills!',
                               'img3', Color(0xffe9eefa), Colors.white),
                           SizedBox(
                             height: 20,
                           ),
                           courseWidget(
-                              'Graphic Design',
-                              'Fundamentals of Design',
+                              'Microcontroller',
+                              'Learn more about them!',
                               'img4',
-                              Color(0xffbdcddfa),
-                              Color(0xffcedaff)),
+                              Color(0xffe9eefa),
+                              Colors.white),
                         ],
                       ),
                     )
@@ -122,9 +116,6 @@ class _mainPageState extends State<mainPage> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {
-                      openProjectPage();
-                    },
                     icon: Icon(
                       Icons.play_circle_filled,
                       color: Color(0xff2657ce).withOpacity(0.5),
@@ -233,9 +224,5 @@ class _mainPageState extends State<mainPage> {
   void openCoursePage(String img, String title) {
     Navigator.pushNamed(context, '/coursePage',
         arguments: {'img': '$img', 'title': '$title'});
-  }
-
-  void openProjectPage() {
-    Navigator.pushNamed(context, '/projectPage');
   }
 }
