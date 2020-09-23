@@ -54,7 +54,7 @@ class _forumPageState extends State<forumPage> {
               height: 25,
             ),
             Text(
-              'What do you \nwant to \ntalk about?',
+              'What do you \nwant to \ntalk about? :)',
               style: TextStyle(
                   fontSize: 35, height: 1.3, fontWeight: FontWeight.w700),
             ),
