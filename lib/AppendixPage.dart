@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:onlinelearning/ForumPage.dart';
-import 'package:onlinelearning/AppendixPage.dart';
+import 'package:onlinelearning/ProjectPage.dart';
 import 'package:onlinelearning/MainPage.dart';
 
-class ProjectPage extends StatelessWidget {
+class AppendixPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: projectPage(),
+      home: appendixPage(),
       routes: {
         '/forumPage': (context) => ForumPage(),
-        '/appendixPage': (context) => AppendixPage(),
+        '/projectPage': (context) => ProjectPage(),
         '/mainPage': (context) => MainPage(),
       },
     );
   }
 }
 
-class projectPage extends StatefulWidget {
+class appendixPage extends StatefulWidget {
   @override
-  _projectPageState createState() => _projectPageState();
+  _appendixPageState createState() => _appendixPageState();
 }
 
-class _projectPageState extends State<projectPage> {
+class _appendixPageState extends State<appendixPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,9 +73,12 @@ class _projectPageState extends State<projectPage> {
                     ),
                   ),
                   IconButton(
+                    onPressed: () {
+                      openProjectPage();
+                    },
                     icon: Icon(
                       Icons.lightbulb_outline,
-                      color: Color(0xff2657ce),
+                      color: Color(0xff2657ce).withOpacity(0.5),
                       size: 40,
                     ),
                   ),
@@ -90,12 +93,9 @@ class _projectPageState extends State<projectPage> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {
-                      openAppendixPage();
-                    },
                     icon: Icon(
                       Icons.memory,
-                      color: Color(0xff2657ce).withOpacity(0.5),
+                      color: Color(0xff2657ce),
                       size: 40,
                     ),
                   ),
@@ -112,8 +112,8 @@ class _projectPageState extends State<projectPage> {
     Navigator.pushNamed(context, '/forumPage');
   }
 
-  void openAppendixPage() {
-    Navigator.pushNamed(context, '/appendixPage');
+  void openProjectPage() {
+    Navigator.pushNamed(context, '/projectPage');
   }
 
   void openMainPage() {

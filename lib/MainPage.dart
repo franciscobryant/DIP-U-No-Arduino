@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onlinelearning/CoursePage.dart';
 import 'package:onlinelearning/ProjectPage.dart';
 import 'package:onlinelearning/ForumPage.dart';
+import 'package:onlinelearning/AppendixPage.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -10,6 +11,7 @@ class MainPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: mainPage(),
       routes: {
+        '/appendixPage': (context) => AppendixPage(),
         '/coursePage': (context) => CoursePage(),
         '/projectPage': (context) => ProjectPage(),
         '/forumPage': (context) => ForumPage(),
@@ -116,13 +118,14 @@ class _mainPageState extends State<mainPage> {
               )),
             ),
             Container(
-              padding: EdgeInsets.all(20),
+              padding:
+                  EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   IconButton(
                     icon: Icon(
-                      Icons.subscriptions,
+                      Icons.developer_board,
                       color: Color(0xff2657ce),
                       size: 40,
                     ),
@@ -132,7 +135,7 @@ class _mainPageState extends State<mainPage> {
                       openProjectPage();
                     },
                     icon: Icon(
-                      Icons.play_circle_filled,
+                      Icons.lightbulb_outline,
                       color: Color(0xff2657ce).withOpacity(0.5),
                       size: 40,
                     ),
@@ -142,7 +145,17 @@ class _mainPageState extends State<mainPage> {
                       openForumPage();
                     },
                     icon: Icon(
-                      Icons.account_circle,
+                      Icons.chat,
+                      color: Color(0xff2657ce).withOpacity(0.5),
+                      size: 40,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      openAppendixPage();
+                    },
+                    icon: Icon(
+                      Icons.memory,
                       color: Color(0xff2657ce).withOpacity(0.5),
                       size: 40,
                     ),
@@ -242,6 +255,10 @@ class _mainPageState extends State<mainPage> {
   void openCoursePage(String img, String title) {
     Navigator.pushNamed(context, '/coursePage',
         arguments: {'img': '$img', 'title': '$title'});
+  }
+
+  void openAppendixPage() {
+    Navigator.pushNamed(context, '/appendixPage');
   }
 
   void openProjectPage() {
