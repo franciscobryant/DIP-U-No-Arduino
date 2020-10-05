@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image:
-                            AssetImage('assets/image/arduino background.png'),
+                            AssetImage('assets/image/arduino-background.png'),
                         fit: BoxFit.cover)),
               ),
               Positioned(
@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         borderRadius: BorderRadius.all(Radius.circular(40)),
                       ),
                       child: Text(
-                        'Continue..',
+                        'Continue',
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.w700),
                       ),

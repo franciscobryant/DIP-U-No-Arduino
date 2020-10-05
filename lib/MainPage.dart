@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlinelearning/colors/light_color.dart';
 import 'package:onlinelearning/CoursePage.dart';
 import 'package:onlinelearning/ProjectPage.dart';
 import 'package:onlinelearning/ForumPage.dart';
@@ -63,15 +64,16 @@ class _mainPageState extends State<mainPage> {
                   Text(
                     'What do you \nwant to \nlearn today?',
                     style: TextStyle(
-                        fontSize: 35, height: 1.3, fontWeight: FontWeight.w700),
+                        fontSize: 35, height: 1.3, fontWeight: FontWeight.w500),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 25,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Container(
+                        padding: EdgeInsets.only(left: 3),
                         width: MediaQuery.of(context).size.width * 0.4,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -87,6 +89,7 @@ class _mainPageState extends State<mainPage> {
                         ),
                       ),
                       Container(
+                        padding: EdgeInsets.only(right: 3, bottom: 10),
                         width: MediaQuery.of(context).size.width * 0.4,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -174,9 +177,14 @@ class _mainPageState extends State<mainPage> {
     return Container(
       padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 10),
       decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.all(Radius.circular(30)),
-      ),
+          color: bgColor,
+          borderRadius: BorderRadius.all(Radius.circular(30)),
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+                offset: Offset(0, 5),
+                blurRadius: 10,
+                color: LightColor.lightpurple.withAlpha(30))
+          ]),
       child: InkWell(
         onTap: () {
           openCoursePage('$img', '$title');

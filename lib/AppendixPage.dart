@@ -53,9 +53,10 @@ class _appendixPageState extends State<appendixPage> {
             SizedBox(
               height: 25,
             ),
-
-            // put here for the content
-
+            Expanded(
+              child: Text("Hello World"),
+              // put here for the content
+            ),
             Container(
               padding:
                   EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 20),
