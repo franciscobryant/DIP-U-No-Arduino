@@ -32,7 +32,7 @@ class _mainPageState extends State<mainPage> {
     return Scaffold(
       backgroundColor: Color(0xfff4f6fd),
       body: Container(
-        padding: EdgeInsets.only(top: 40, left: 30, right: 30),
+        padding: EdgeInsets.only(top: 52, left: 30, right: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -40,7 +40,7 @@ class _mainPageState extends State<mainPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "Hello Jessica!",
+                  'What do you want to \nlearn today?',
                   style: TextStyle(fontSize: 20, color: Colors.blueAccent),
                 ),
                 Container(
@@ -53,21 +53,13 @@ class _mainPageState extends State<mainPage> {
                 )
               ],
             ),
-            SizedBox(
-              height: 25,
-            ),
             Expanded(
               child: SingleChildScrollView(
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    'What do you \nwant to \nlearn today?',
-                    style: TextStyle(
-                        fontSize: 35, height: 1.3, fontWeight: FontWeight.w500),
-                  ),
                   SizedBox(
-                    height: 25,
+                    height: 15,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

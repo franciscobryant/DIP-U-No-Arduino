@@ -3,6 +3,7 @@ import 'package:onlinelearning/ForumPage.dart';
 import 'package:onlinelearning/AppendixPage.dart';
 import 'package:onlinelearning/MainPage.dart';
 import 'package:onlinelearning/projects/ArduinoPiano.dart';
+import 'package:onlinelearning/projects/MotionTracking.dart';
 import 'helper/quad_clipper.dart';
 import 'colors/light_color.dart';
 
@@ -17,6 +18,7 @@ class ProjectPage extends StatelessWidget {
         '/appendixPage': (context) => AppendixPage(),
         '/mainPage': (context) => MainPage(),
         '/arduinoPiano': (context) => ArduinoPiano(),
+        '/motionTracking': (context) => MotionTracking(),
       },
     );
   }
@@ -76,7 +78,7 @@ class _projectPageState extends State<projectPage> {
           children: <Widget>[
             InkWell(
               onTap: () {
-                openProjectDescription();
+                openProjectDescription1();
               },
               child: _card(
                   primary: LightColor.purple,
@@ -127,23 +129,28 @@ class _projectPageState extends State<projectPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            _card(
-                primary: Colors.white,
-                chipColor: LightColor.seeBlue,
-                backWidget: _decorationContainerD(
-                    LightColor.darkseeBlue, -100, -65,
-                    secondary: LightColor.lightseeBlue,
-                    secondaryAccent: LightColor.seeBlue),
-                chipText1: "Robotic Arm Arduino",
-                isPrimaryCard: true,
-                imgPath:
-                    "https://e7.pngegg.com/pngimages/143/1008/png-clipart-arduino-integrated-development-environment-open-source-hardware-computer-software-installation-skin-miscellaneous-electronics.png"),
+            InkWell(
+              onTap: () {
+                openProjectDescription2();
+              },
+              child: _card(
+                  primary: Colors.white,
+                  chipColor: LightColor.seeBlue,
+                  backWidget: _decorationContainerD(
+                      LightColor.darkseeBlue, -100, -65,
+                      secondary: LightColor.lightseeBlue,
+                      secondaryAccent: LightColor.seeBlue),
+                  chipText1: "Motion Tracking Camera Unit",
+                  isPrimaryCard: true,
+                  imgPath:
+                      "https://e7.pngegg.com/pngimages/143/1008/png-clipart-arduino-integrated-development-environment-open-source-hardware-computer-software-installation-skin-miscellaneous-electronics.png"),
+            ),
             _card(
                 primary: Colors.white,
                 chipColor: LightColor.lightOrange,
                 backWidget: _decorationContainerF(
                     LightColor.lightOrange, LightColor.orange, 50, -30),
-                chipText1: "Motion Tracking Camera Unit",
+                chipText1: "Robotic Arm with RasPi",
                 isPrimaryCard: true,
                 imgPath:
                     "https://www.raspberrypi.org/wp-content/uploads/2011/10/Raspi-PGB001.png"),
@@ -167,6 +174,63 @@ class _projectPageState extends State<projectPage> {
                   -50,
                   30,
                 ),
+                chipText1: "Water Quality Monitoring",
+                isPrimaryCard: true,
+                imgPath:
+                    "https://www.raspberrypi.org/wp-content/uploads/2011/10/Raspi-PGB001.png"),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _featuredRowC() {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Container(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            _card(
+                primary: Colors.white,
+                chipColor: LightColor.seeBlue,
+                backWidget: _decorationContainerC(
+                  LightColor.darkseeBlue,
+                  -100,
+                  -65,
+                ),
+                chipText1: "Robotic Arm Arduino",
+                isPrimaryCard: true,
+                imgPath:
+                    "https://www.raspberrypi.org/wp-content/uploads/2011/10/Raspi-PGB001.png"),
+            _card(
+                primary: Colors.white,
+                chipColor: LightColor.lightOrange,
+                backWidget:
+                    _decorationContainerB(LightColor.lightOrange, 50, -30),
+                chipText1: "Motion Tracking Camera Unit",
+                isPrimaryCard: true,
+                imgPath:
+                    "https://e7.pngegg.com/pngimages/143/1008/png-clipart-arduino-integrated-development-environment-open-source-hardware-computer-software-installation-skin-miscellaneous-electronics.png"),
+            _card(
+                primary: Colors.white,
+                chipColor: LightColor.lightpurple,
+                backWidget: _decorationContainerF(
+                  LightColor.lightpurple,
+                  LightColor.lightseeBlue,
+                  90,
+                  -40,
+                ),
+                chipText1: "Bluetooth LED Controller",
+                isPrimaryCard: true,
+                imgPath:
+                    "https://e7.pngegg.com/pngimages/143/1008/png-clipart-arduino-integrated-development-environment-open-source-hardware-computer-software-installation-skin-miscellaneous-electronics.png"),
+            _card(
+                primary: Colors.white,
+                backWidget: _decorationContainerE(
+                    LightColor.lightOrange2, -50, 30,
+                    secondary: LightColor.seeBlue),
                 chipText1: "Water Quality Monitoring",
                 isPrimaryCard: true,
                 imgPath:
@@ -439,7 +503,7 @@ class _projectPageState extends State<projectPage> {
     return Scaffold(
       backgroundColor: Color(0xfff4f6fd),
       body: Container(
-        padding: EdgeInsets.only(top: 40, left: 30, right: 30),
+        padding: EdgeInsets.only(top: 52, left: 30, right: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -447,7 +511,7 @@ class _projectPageState extends State<projectPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "Hello Jessica!",
+                  'What do you want to \nmake today?',
                   style: TextStyle(fontSize: 20, color: Colors.blueAccent),
                 ),
                 Container(
@@ -468,16 +532,8 @@ class _projectPageState extends State<projectPage> {
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    'What do you \nwant to \nmake today?',
-                    style: TextStyle(
-                      fontSize: 35,
-                      height: 1.3,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
                   SizedBox(
-                    height: 30,
+                    height: 8,
                   ),
                   _categoryRow(
                       "Beginner", LightColor.orange, LightColor.orange),
@@ -486,6 +542,10 @@ class _projectPageState extends State<projectPage> {
                   _categoryRow(
                       "Intermidiate", LightColor.purple, LightColor.darkpurple),
                   _featuredRowB(),
+                  SizedBox(height: 18),
+                  _categoryRow(
+                      "Advanced", LightColor.orange, LightColor.orange),
+                  _featuredRowC(),
                   SizedBox(height: 5),
                 ],
               )),
@@ -542,8 +602,12 @@ class _projectPageState extends State<projectPage> {
     );
   }
 
-  void openProjectDescription() {
+  void openProjectDescription1() {
     Navigator.pushNamed(context, '/arduinoPiano');
+  }
+
+  void openProjectDescription2() {
+    Navigator.pushNamed(context, '/motionTracking');
   }
 
   void openForumPage() {
