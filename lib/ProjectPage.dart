@@ -200,7 +200,7 @@ class _projectPageState extends State<projectPage> {
                   -100,
                   -65,
                 ),
-                chipText1: "Robotic Arm Arduino",
+                chipText1: "RPi Sonar (UltraSonic Sensor)",
                 isPrimaryCard: true,
                 imgPath:
                     "https://www.raspberrypi.org/wp-content/uploads/2011/10/Raspi-PGB001.png"),
@@ -209,7 +209,7 @@ class _projectPageState extends State<projectPage> {
                 chipColor: LightColor.lightOrange,
                 backWidget:
                     _decorationContainerB(LightColor.lightOrange, 50, -30),
-                chipText1: "Motion Tracking Camera Unit",
+                chipText1: "Arduino Weather Forecast",
                 isPrimaryCard: true,
                 imgPath:
                     "https://e7.pngegg.com/pngimages/143/1008/png-clipart-arduino-integrated-development-environment-open-source-hardware-computer-software-installation-skin-miscellaneous-electronics.png"),
@@ -222,7 +222,7 @@ class _projectPageState extends State<projectPage> {
                   90,
                   -40,
                 ),
-                chipText1: "Bluetooth LED Controller",
+                chipText1: "4WD Arduino RC Car",
                 isPrimaryCard: true,
                 imgPath:
                     "https://e7.pngegg.com/pngimages/143/1008/png-clipart-arduino-integrated-development-environment-open-source-hardware-computer-software-installation-skin-miscellaneous-electronics.png"),
@@ -231,7 +231,7 @@ class _projectPageState extends State<projectPage> {
                 backWidget: _decorationContainerE(
                     LightColor.lightOrange2, -50, 30,
                     secondary: LightColor.seeBlue),
-                chipText1: "Water Quality Monitoring",
+                chipText1: "6Channel Osciloscope",
                 isPrimaryCard: true,
                 imgPath:
                     "https://www.raspberrypi.org/wp-content/uploads/2011/10/Raspi-PGB001.png"),
