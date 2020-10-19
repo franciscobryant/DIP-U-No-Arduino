@@ -503,7 +503,7 @@ class _projectPageState extends State<projectPage> {
     return Scaffold(
       backgroundColor: Color(0xfff4f6fd),
       body: Container(
-        padding: EdgeInsets.only(top: 52, left: 30, right: 30),
+        padding: EdgeInsets.only(top: 55, left: 30, right: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
