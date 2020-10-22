@@ -540,7 +540,7 @@ class _projectPageState extends State<projectPage> {
                   _featuredRowA(),
                   SizedBox(height: 18),
                   _categoryRow(
-                      "Intermidiate", LightColor.purple, LightColor.darkpurple),
+                      "Intermediate", LightColor.purple, LightColor.darkpurple),
                   _featuredRowB(),
                   SizedBox(height: 18),
                   _categoryRow(
