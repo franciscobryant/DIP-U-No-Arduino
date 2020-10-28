@@ -6,6 +6,7 @@ import 'package:onlinelearning/projects/ArduinoPiano.dart';
 import 'package:onlinelearning/projects/MotionTracking.dart';
 import 'helper/quad_clipper.dart';
 import 'colors/light_color.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProjectPage extends StatelessWidget {
   @override
@@ -54,14 +55,15 @@ class _projectPageState extends State<projectPage> {
       margin: EdgeInsets.symmetric(horizontal: 0),
       height: 30,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
             title,
-            style: TextStyle(
-                fontSize: 18,
-                color: LightColor.titleTextColor,
-                fontWeight: FontWeight.bold),
+            style: GoogleFonts.josefinSans(
+              fontWeight: FontWeight.w700,
+              fontSize: 24,
+              color: LightColor.titleTextColor,
+            ),
           ),
         ],
       ),
@@ -231,7 +233,7 @@ class _projectPageState extends State<projectPage> {
                 backWidget: _decorationContainerE(
                     LightColor.lightOrange2, -50, 30,
                     secondary: LightColor.seeBlue),
-                chipText1: "6Channel Osciloscope",
+                chipText1: "6 Channel Osciloscope",
                 isPrimaryCard: true,
                 imgPath:
                     "https://www.raspberrypi.org/wp-content/uploads/2011/10/Raspi-PGB001.png"),
@@ -536,23 +538,22 @@ class _projectPageState extends State<projectPage> {
                     height: 8,
                   ),
                   _categoryRow(
-                      "Beginner", LightColor.orange, LightColor.orange),
+                      "- BEGINNER -", LightColor.orange, LightColor.orange),
                   _featuredRowA(),
                   SizedBox(height: 18),
-                  _categoryRow(
-                      "Intermediate", LightColor.purple, LightColor.darkpurple),
+                  _categoryRow("- INTERMEDIATE -", LightColor.purple,
+                      LightColor.darkpurple),
                   _featuredRowB(),
                   SizedBox(height: 18),
                   _categoryRow(
-                      "Advanced", LightColor.orange, LightColor.orange),
+                      "- ADVANCED -", LightColor.orange, LightColor.orange),
                   _featuredRowC(),
                   SizedBox(height: 5),
                 ],
               )),
             ),
             Container(
-              padding:
-                  EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 20),
+              padding: EdgeInsets.only(top: 17, left: 2, right: 2, bottom: 17),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -560,38 +561,58 @@ class _projectPageState extends State<projectPage> {
                     onPressed: () {
                       openMainPage();
                     },
-                    icon: Icon(
-                      Icons.developer_board,
+                    // icon: Icon(
+                    //   Icons.developer_board,
+                    //   color: Color(0xff2657ce).withOpacity(0.5),
+                    //   size: 40,
+                    // ),
+                    icon: Image.asset(
+                      "assets/image/teacher.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
-                    icon: Icon(
-                      Icons.lightbulb_outline,
+                    // icon: Icon(
+                    //   Icons.lightbulb_outline,
+                    //   color: Color(0xff2657ce),
+                    //   size: 40,
+                    // ),
+                    icon: Image.asset(
+                      "assets/image/repair-tools.png",
                       color: Color(0xff2657ce),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
                     onPressed: () {
                       openForumPage();
                     },
-                    icon: Icon(
-                      Icons.chat,
+                    // icon: Icon(
+                    //   Icons.chat,
+                    //   color: Color(0xff2657ce).withOpacity(0.5),
+                    //   size: 40,
+                    // ),
+                    icon: Image.asset(
+                      "assets/image/communication.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
                     onPressed: () {
                       openAppendixPage();
                     },
-                    icon: Icon(
-                      Icons.memory,
+                    // icon: Icon(
+                    //   Icons.memory,
+                    //   color: Color(0xff2657ce).withOpacity(0.5),
+                    //   size: 40,
+                    // ),
+                    icon: Image.asset(
+                      "assets/image/controller.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                 ],
               ),

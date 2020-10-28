@@ -62,7 +62,16 @@ class _motionComponentsState extends State<motionComponents> {
                         ),
                       );
                     },
-                    child: Text(component.name),
+                    child: Row(
+                      children: <Widget>[
+                        Text(component.name + " "),
+                        Icon(
+                          Icons.photo_camera,
+                          size: 17,
+                          color: Color(0xff2657ce).withOpacity(0.6),
+                        )
+                      ],
+                    ),
                   ),
                   showEditIcon: false,
                   placeholder: false,

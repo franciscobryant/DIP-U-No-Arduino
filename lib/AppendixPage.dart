@@ -314,8 +314,7 @@ class _appendixPageState extends State<appendixPage> {
               // put here for the content
             ),
             Container(
-              padding:
-                  EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 20),
+              padding: EdgeInsets.only(top: 17, left: 2, right: 2, bottom: 17),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -323,38 +322,38 @@ class _appendixPageState extends State<appendixPage> {
                     onPressed: () {
                       openMainPage();
                     },
-                    icon: Icon(
-                      Icons.developer_board,
+                    icon: Image.asset(
+                      "assets/image/teacher.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
                     onPressed: () {
                       openProjectPage();
                     },
-                    icon: Icon(
-                      Icons.lightbulb_outline,
+                    icon: Image.asset(
+                      "assets/image/repair-tools.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
                     onPressed: () {
                       openForumPage();
                     },
-                    icon: Icon(
-                      Icons.chat,
+                    icon: Image.asset(
+                      "assets/image/communication.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
-                    icon: Icon(
-                      Icons.memory,
+                    icon: Image.asset(
+                      "assets/image/controller.png",
                       color: Color(0xff2657ce),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                 ],
               ),

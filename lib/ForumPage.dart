@@ -36,13 +36,14 @@ class _forumPageState extends State<forumPage> {
           children: <Widget>[
             Expanded(
               child: WebView(
-                initialUrl: "https://forum.arduino.cc/",
+                initialUrl:
+                    "https://www.classmarker.com/register/online-test-taker/",
                 javascriptMode: JavascriptMode.unrestricted,
               ),
             ),
             Container(
               padding:
-                  EdgeInsets.only(top: 10, left: 30, right: 30, bottom: 20),
+                  EdgeInsets.only(top: 17, left: 12, right: 12, bottom: 17),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -50,38 +51,38 @@ class _forumPageState extends State<forumPage> {
                     onPressed: () {
                       openMainPage();
                     },
-                    icon: Icon(
-                      Icons.developer_board,
+                    icon: Image.asset(
+                      "assets/image/teacher.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
                     onPressed: () {
                       openProjectPage();
                     },
-                    icon: Icon(
-                      Icons.lightbulb_outline,
+                    icon: Image.asset(
+                      "assets/image/repair-tools.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
-                    icon: Icon(
-                      Icons.chat,
+                    icon: Image.asset(
+                      "assets/image/communication.png",
                       color: Color(0xff2657ce),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
                     onPressed: () {
                       openAppendixPage();
                     },
-                    icon: Icon(
-                      Icons.memory,
+                    icon: Image.asset(
+                      "assets/image/controller.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                 ],
               ),
