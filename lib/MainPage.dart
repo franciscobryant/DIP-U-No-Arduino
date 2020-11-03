@@ -70,13 +70,46 @@ class _mainPageState extends State<mainPage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
-                            courseWidget('Basics', 'Getting started on Arduino',
-                                'img1', Color(0xffff6a65), Color(0xffff5954)),
+                            courseWidget(
+                                'Basics',
+                                'Getting started on Arduino',
+                                'img1',
+                                Color(0xffff6a65),
+                                Color(0xffff5954),
+                                'Hardware 1',
+                                'Introduction to Arduino',
+                                'Hardware1',
+                                'Hardware 2',
+                                'Getting to know Arduino',
+                                'Hardware2',
+                                'Software 1',
+                                'Place to program!',
+                                'Software1',
+                                'Software 2',
+                                'Running your first program',
+                                'Software2'),
                             SizedBox(
                               height: 20,
                             ),
-                            courseWidget('Advanced', 'Master Arduino', 'img2',
-                                Color(0xffe9eefa), Colors.white),
+                            courseWidget(
+                              'Advanced',
+                              'Master Arduino',
+                              'img2',
+                              Color(0xffe9eefa),
+                              Colors.white,
+                              'Advanced 1',
+                              'Introduction to Arduino',
+                              'Advanced1',
+                              'Advanced 2',
+                              'Getting to know Arduino',
+                              'Advanced2',
+                              'Advanced 3',
+                              'Place to program!',
+                              'Advanced3',
+                              'Advanced 4',
+                              'Running your first program',
+                              'Advanced4',
+                            ),
                           ],
                         ),
                       ),
@@ -90,20 +123,46 @@ class _mainPageState extends State<mainPage> {
                               height: 50,
                             ),
                             courseWidget(
-                                'Intermediate',
-                                'Level up your skills!',
-                                'img3',
-                                Color(0xffe9eefa),
-                                Colors.white),
+                              'Intermediate',
+                              'Level up your skills!',
+                              'img3',
+                              Color(0xffe9eefa),
+                              Colors.white,
+                              'Intermediate 1',
+                              'Introduction to Arduino',
+                              'Intermediate1',
+                              'Intermediate 2',
+                              'Getting to know Arduino',
+                              'Intermediate2',
+                              'Intermediate 3',
+                              'Place to program!',
+                              'Intermediate3',
+                              'Intermediate 4',
+                              'Running your first program',
+                              'Intermediate4',
+                            ),
                             SizedBox(
                               height: 20,
                             ),
                             courseWidget(
-                                'Microcontroller',
-                                'Learn more about them!',
-                                'img4',
-                                Color(0xffe9eefa),
-                                Colors.white),
+                              'Microcontroller',
+                              'Learn more about them!',
+                              'img4',
+                              Color(0xffe9eefa),
+                              Colors.white,
+                              'Hardware 1',
+                              'Introduction to Arduino',
+                              'Hardware1',
+                              'Hardware 2',
+                              'Getting to know Arduino',
+                              'Hardware2',
+                              'Software 1',
+                              'Place to program!',
+                              'Software1',
+                              'Software 2',
+                              'Running your first program',
+                              'Software2',
+                            ),
                           ],
                         ),
                       )
@@ -163,8 +222,25 @@ class _mainPageState extends State<mainPage> {
     );
   }
 
-  Container courseWidget(String category, String title, String img,
-      Color categoryColor, Color bgColor) {
+  Container courseWidget(
+    String category,
+    String title,
+    String img,
+    Color categoryColor,
+    Color bgColor,
+    String courseTitle1,
+    String courseSubtitle1,
+    String pageName1,
+    String courseTitle2,
+    String courseSubtitle2,
+    String pageName2,
+    String courseTitle3,
+    String courseSubtitle3,
+    String pageName3,
+    String courseTitle4,
+    String courseSubtitle4,
+    String pageName4,
+  ) {
     return Container(
       padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 10),
       decoration: BoxDecoration(
@@ -178,7 +254,22 @@ class _mainPageState extends State<mainPage> {
           ]),
       child: InkWell(
         onTap: () {
-          openCoursePage('$img', '$title');
+          openCoursePage(
+            '$img',
+            '$title',
+            '$courseTitle1',
+            '$courseSubtitle1',
+            '$pageName1',
+            '$courseTitle2',
+            '$courseSubtitle2',
+            '$pageName2',
+            '$courseTitle3',
+            '$courseSubtitle3',
+            '$pageName3',
+            '$courseTitle4',
+            '$courseSubtitle4',
+            '$pageName4',
+          );
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -251,9 +342,37 @@ class _mainPageState extends State<mainPage> {
     );
   }
 
-  void openCoursePage(String img, String title) {
-    Navigator.pushNamed(context, '/coursePage',
-        arguments: {'img': '$img', 'title': '$title'});
+  void openCoursePage(
+      String img,
+      String title,
+      String courseTitle1,
+      String courseSubtitle1,
+      String pageName1,
+      String courseTitle2,
+      String courseSubtitle2,
+      String pageName2,
+      String courseTitle3,
+      String courseSubtitle3,
+      String pageName3,
+      String courseTitle4,
+      String courseSubtitle4,
+      String pageName4) {
+    Navigator.pushNamed(context, '/coursePage', arguments: {
+      'img': '$img',
+      'title': '$title',
+      'courseTitle1': '$courseTitle1',
+      'courseSubtitle1': '$courseSubtitle1',
+      'pageName1': '$pageName1',
+      'courseTitle2': '$courseTitle2',
+      'courseSubtitle2': '$courseSubtitle2',
+      'pageName2': '$pageName2',
+      'courseTitle3': '$courseTitle3',
+      'courseSubtitle3': '$courseSubtitle3',
+      'pageName3': '$pageName3',
+      'courseTitle4': '$courseTitle4',
+      'courseSubtitle4': '$courseSubtitle4',
+      'pageName4': '$pageName4',
+    });
   }
 
   void openAppendixPage() {
