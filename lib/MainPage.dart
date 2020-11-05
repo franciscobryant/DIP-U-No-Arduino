@@ -87,7 +87,7 @@ class _mainPageState extends State<mainPage> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             courseWidget(
-                                'Basics',
+                                'Beginner',
                                 'Getting started on Arduino',
                                 'img1',
                                 Color(0xffff6a65),
