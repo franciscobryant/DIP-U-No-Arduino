@@ -96,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Container(
                 alignment: Alignment.bottomCenter,
-                height: MediaQuery.of(context).size.height * 0.6,
+                height: MediaQuery.of(context).size.height * 0.5,
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     image: DecorationImage(
