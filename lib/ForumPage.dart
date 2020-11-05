@@ -36,8 +36,7 @@ class _forumPageState extends State<forumPage> {
           children: <Widget>[
             Expanded(
               child: WebView(
-                initialUrl:
-                    "https://www.classmarker.com/register/online-test-taker/",
+                initialUrl: "https://forum.arduino.cc",
                 javascriptMode: JavascriptMode.unrestricted,
               ),
             ),

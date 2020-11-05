@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onlinelearning/ProfilePage.dart';
 import 'package:onlinelearning/appendix/EnhancedFeatures.dart';
 import 'package:onlinelearning/appendix/EntryLevel.dart';
 import 'package:onlinelearning/appendix/IoT.dart';
@@ -69,16 +70,29 @@ class _appendixPageState extends State<appendixPage> {
               children: <Widget>[
                 Text(
                   "A page about all kinds of \nArduino boards",
-                  style: TextStyle(fontSize: 20, color: Colors.blueAccent),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage('assets/image/profilePic.png'))),
-                )
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProfilePage(),
+                        ));
+                  },
+                  child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('assets/image/profilePic.png'))),
+                  ),
+                ),
               ],
             ),
             SizedBox(
@@ -141,9 +155,9 @@ class _appendixPageState extends State<appendixPage> {
                                 Text(
                                   "Get started with Arduino",
                                   style: TextStyle(
-                                      color: Colors.black38,
+                                      color: Colors.black45,
                                       fontSize: 10,
-                                      fontWeight: FontWeight.w600),
+                                      fontWeight: FontWeight.w700),
                                 ),
                               ],
                             ),
@@ -190,9 +204,9 @@ class _appendixPageState extends State<appendixPage> {
                                 Text(
                                   "Advanced Functionalities",
                                   style: TextStyle(
-                                      color: Colors.black38,
+                                      color: Colors.black45,
                                       fontSize: 10,
-                                      fontWeight: FontWeight.w600),
+                                      fontWeight: FontWeight.w700),
                                 ),
                               ],
                             ),
@@ -245,9 +259,9 @@ class _appendixPageState extends State<appendixPage> {
                                 Text(
                                   "Internet of Things",
                                   style: TextStyle(
-                                      color: Colors.black38,
+                                      color: Colors.black45,
                                       fontSize: 10,
-                                      fontWeight: FontWeight.w600),
+                                      fontWeight: FontWeight.w700),
                                 ),
                               ],
                             ),
@@ -295,9 +309,9 @@ class _appendixPageState extends State<appendixPage> {
                                 Text(
                                   "Older Arduino stuff",
                                   style: TextStyle(
-                                      color: Colors.black38,
+                                      color: Colors.black45,
                                       fontSize: 10,
-                                      fontWeight: FontWeight.w600),
+                                      fontWeight: FontWeight.w700),
                                 ),
                               ],
                             ),

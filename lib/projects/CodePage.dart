@@ -21,7 +21,6 @@ class _CodePageState extends State<CodePage> {
     return Scaffold(
       backgroundColor: Color(0xfff4f6fd),
       body: Container(
-        // height: MediaQuery.of(context).size.height,
         padding: EdgeInsets.only(
           top: 40,
           left: 30,

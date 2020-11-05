@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onlinelearning/ForumPage.dart';
 import 'package:onlinelearning/AppendixPage.dart';
 import 'package:onlinelearning/MainPage.dart';
+import 'package:onlinelearning/ProfilePage.dart';
 import 'package:onlinelearning/projects/ArduinoPiano.dart';
 import 'package:onlinelearning/projects/MotionTracking.dart';
 import 'helper/quad_clipper.dart';
@@ -514,16 +515,29 @@ class _projectPageState extends State<projectPage> {
               children: <Widget>[
                 Text(
                   'What do you want to \nmake today?',
-                  style: TextStyle(fontSize: 20, color: Colors.blueAccent),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage('assets/image/profilePic.png'))),
-                )
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProfilePage(),
+                        ));
+                  },
+                  child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('assets/image/profilePic.png'))),
+                  ),
+                ),
               ],
             ),
             SizedBox(

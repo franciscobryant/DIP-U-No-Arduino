@@ -82,17 +82,12 @@ class _CoursePageState extends State<CoursePage> {
                           '$chosenTitle',
                           style: TextStyle(
                             color: Color(0xff2657ce),
-                            fontSize: 27,
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
-                        Text(
-                          'Getting started',
-                          style: TextStyle(
-                              color: Colors.black.withOpacity(0.6),
-                              fontSize: 20),
-                        ),
                         SizedBox(
-                          height: 20,
+                          height: 25,
                         ),
                         Container(
                           padding: EdgeInsets.all(20),
@@ -219,12 +214,20 @@ class _CoursePageState extends State<CoursePage> {
                 Text(
                   '$title',
                   style: TextStyle(
+                    fontWeight: FontWeight.w600,
                     fontSize: 20,
                   ),
                 ),
+                SizedBox(
+                  height: 3,
+                ),
                 Text(
                   '$info',
-                  style: TextStyle(fontSize: 18, color: Colors.grey),
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.grey,
+                    fontStyle: FontStyle.italic,
+                  ),
                 )
               ],
             )

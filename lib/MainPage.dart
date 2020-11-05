@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:onlinelearning/CompletePage.dart';
+import 'package:onlinelearning/ProfilePage.dart';
 import 'package:onlinelearning/colors/light_color.dart';
 import 'package:onlinelearning/CoursePage.dart';
 import 'package:onlinelearning/ProjectPage.dart';
 import 'package:onlinelearning/ForumPage.dart';
 import 'package:onlinelearning/AppendixPage.dart';
+import 'package:onlinelearning/QuizPage.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -41,16 +44,29 @@ class _mainPageState extends State<mainPage> {
               children: <Widget>[
                 Text(
                   'What do you want to \nlearn today?',
-                  style: TextStyle(fontSize: 20, color: Colors.blueAccent),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage('assets/image/profilePic.png'))),
-                )
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProfilePage(),
+                        ));
+                  },
+                  child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('assets/image/profilePic.png'))),
+                  ),
+                ),
               ],
             ),
             Expanded(
@@ -76,16 +92,16 @@ class _mainPageState extends State<mainPage> {
                                 'img1',
                                 Color(0xffff6a65),
                                 Color(0xffff5954),
-                                'Hardware 1',
+                                'Hardware Tutorial 1',
                                 'Introduction to Arduino',
                                 'Hardware1',
-                                'Hardware 2',
+                                'Hardware Tutorial 2',
                                 'Getting to know Arduino',
                                 'Hardware2',
-                                'Software 1',
+                                'Software Tutorial 1',
                                 'Place to program!',
                                 'Software1',
-                                'Software 2',
+                                'Software Tutorial 2',
                                 'Running your first program',
                                 'Software2'),
                             SizedBox(
@@ -97,17 +113,17 @@ class _mainPageState extends State<mainPage> {
                               'img2',
                               Color(0xffe9eefa),
                               Colors.white,
-                              'Advanced 1',
-                              'Introduction to Arduino',
+                              'Advanced Tutorial 1',
+                              'Bluetooth with Arduino',
                               'Advanced1',
-                              'Advanced 2',
-                              'Getting to know Arduino',
+                              'Advanced Tutorial 2',
+                              'Connecting to Wi-Fi',
                               'Advanced2',
-                              'Advanced 3',
-                              'Place to program!',
+                              'Advanced Tutorial 3',
+                              'Image Processing',
                               'Advanced3',
-                              'Advanced 4',
-                              'Running your first program',
+                              'Advanced Tutorial 4',
+                              'Internet of Things',
                               'Advanced4',
                             ),
                           ],
@@ -128,40 +144,141 @@ class _mainPageState extends State<mainPage> {
                               'img3',
                               Color(0xffe9eefa),
                               Colors.white,
-                              'Intermediate 1',
-                              'Introduction to Arduino',
+                              'Intermediate Tutorial 1',
+                              'Dealing with Interrupts',
                               'Intermediate1',
-                              'Intermediate 2',
-                              'Getting to know Arduino',
+                              'Intermediate Tutorial 2',
+                              'Pulse Width Modulation',
                               'Intermediate2',
-                              'Intermediate 3',
-                              'Place to program!',
+                              'Intermediate Tutorial 3',
+                              'Inter-Integrated Circuits',
                               'Intermediate3',
-                              'Intermediate 4',
-                              'Running your first program',
+                              'Intermediate Tutorial 4',
+                              'Serial Peripheral Interface',
                               'Intermediate4',
                             ),
                             SizedBox(
                               height: 20,
                             ),
-                            courseWidget(
-                              'Microcontroller',
-                              'Learn more about them!',
-                              'img4',
-                              Color(0xffe9eefa),
-                              Colors.white,
-                              'Hardware 1',
-                              'Introduction to Arduino',
-                              'Hardware1',
-                              'Hardware 2',
-                              'Getting to know Arduino',
-                              'Hardware2',
-                              'Software 1',
-                              'Place to program!',
-                              'Software1',
-                              'Software 2',
-                              'Running your first program',
-                              'Software2',
+                            // courseWidget(
+                            //   'Microcontroller',
+                            //   'Learn more about them!',
+                            //   'img4',
+                            //   Color(0xffe9eefa),
+                            //   Colors.white,
+                            //   'Hardware 1',
+                            //   'Introduction to Arduino',
+                            //   'Hardware1',
+                            //   'Hardware 2',
+                            //   'Getting to know Arduino',
+                            //   'Hardware2',
+                            //   'Software 1',
+                            //   'Place to program!',
+                            //   'Software1',
+                            //   'Software 2',
+                            //   'Running your first program',
+                            //   'Software2',
+                            // ),
+                            Container(
+                              padding: EdgeInsets.only(
+                                  top: 20, left: 20, right: 20, bottom: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(30)),
+                                  boxShadow: <BoxShadow>[
+                                    BoxShadow(
+                                        offset: Offset(0, 5),
+                                        blurRadius: 10,
+                                        color: LightColor.lightpurple
+                                            .withAlpha(30))
+                                  ]),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => QuizPage(),
+                                      ));
+                                },
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Container(
+                                      padding: EdgeInsets.all(10),
+                                      decoration: BoxDecoration(
+                                        color: Color(0xffe9eefa),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(20)),
+                                      ),
+                                      child: Text(
+                                        "Quiz",
+                                        style: TextStyle(
+                                          color: (Color(0xffe9eefa) ==
+                                                  Color(0xffe9eefa)
+                                              ? Color(0xff2657ce)
+                                              : Colors.white),
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      'Test yourself!',
+                                      style: TextStyle(
+                                        color:
+                                            (Colors.white == Color(0xffff5954))
+                                                ? Colors.white
+                                                : Colors.black,
+                                        fontSize: 20,
+                                        height: 1,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      children: <Widget>[
+                                        Container(
+                                          height: 5,
+                                          width: 100,
+                                          color: (Colors.white ==
+                                                  Color(0xffff5954))
+                                              ? Colors.red
+                                              : Color(0xff2657ce),
+                                        ),
+                                        Expanded(
+                                          child: Container(
+                                            height: 5,
+                                            color: (Colors.white ==
+                                                    Color(0xffff5954))
+                                                ? Colors.white.withOpacity(0.5)
+                                                : Color(0xff2657ce)
+                                                    .withOpacity(0.5),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Hero(
+                                      tag: 'img4',
+                                      child: Container(
+                                        height: 80,
+                                        decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/image/img4.png'),
+                                        )),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -283,9 +400,11 @@ class _mainPageState extends State<mainPage> {
               child: Text(
                 '$category',
                 style: TextStyle(
-                    color: (categoryColor == Color(0xffe9eefa)
-                        ? Color(0xff2657ce)
-                        : Colors.white)),
+                  color: (categoryColor == Color(0xffe9eefa)
+                      ? Color(0xff2657ce)
+                      : Colors.white),
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
             SizedBox(
@@ -299,6 +418,7 @@ class _mainPageState extends State<mainPage> {
                     : Colors.black,
                 fontSize: 20,
                 height: 1,
+                fontWeight: FontWeight.w600,
               ),
             ),
             SizedBox(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onlinelearning/MainPage.dart';
+import 'package:onlinelearning/CompletePage.dart';
 
 class Hardware_Tutorial2_Page_3 extends StatefulWidget {
   @override
@@ -48,5 +48,6 @@ class _Hardware_Tutorial2_Page_3State extends State<Hardware_Tutorial2_Page_3> {
 }
 
 Future navigateToSubPage(context) async {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => CompletePage()));
 }
