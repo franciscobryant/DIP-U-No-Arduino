@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:onlinelearning/ForumPage.dart';
 import 'package:onlinelearning/AppendixPage.dart';
 import 'package:onlinelearning/MainPage.dart';
+import 'package:onlinelearning/ProfilePage.dart';
 import 'package:onlinelearning/projects/ArduinoPiano.dart';
 import 'package:onlinelearning/projects/MotionTracking.dart';
 import 'helper/quad_clipper.dart';
 import 'colors/light_color.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProjectPage extends StatelessWidget {
   @override
@@ -54,14 +56,15 @@ class _projectPageState extends State<projectPage> {
       margin: EdgeInsets.symmetric(horizontal: 0),
       height: 30,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
             title,
-            style: TextStyle(
-                fontSize: 18,
-                color: LightColor.titleTextColor,
-                fontWeight: FontWeight.bold),
+            style: GoogleFonts.josefinSans(
+              fontWeight: FontWeight.w700,
+              fontSize: 24,
+              color: LightColor.titleTextColor,
+            ),
           ),
         ],
       ),
@@ -200,7 +203,7 @@ class _projectPageState extends State<projectPage> {
                   -100,
                   -65,
                 ),
-                chipText1: "Robotic Arm Arduino",
+                chipText1: "RPi Sonar (UltraSonic Sensor)",
                 isPrimaryCard: true,
                 imgPath:
                     "https://www.raspberrypi.org/wp-content/uploads/2011/10/Raspi-PGB001.png"),
@@ -209,7 +212,7 @@ class _projectPageState extends State<projectPage> {
                 chipColor: LightColor.lightOrange,
                 backWidget:
                     _decorationContainerB(LightColor.lightOrange, 50, -30),
-                chipText1: "Motion Tracking Camera Unit",
+                chipText1: "Arduino Weather Forecast",
                 isPrimaryCard: true,
                 imgPath:
                     "https://e7.pngegg.com/pngimages/143/1008/png-clipart-arduino-integrated-development-environment-open-source-hardware-computer-software-installation-skin-miscellaneous-electronics.png"),
@@ -222,7 +225,7 @@ class _projectPageState extends State<projectPage> {
                   90,
                   -40,
                 ),
-                chipText1: "Bluetooth LED Controller",
+                chipText1: "4WD Arduino RC Car",
                 isPrimaryCard: true,
                 imgPath:
                     "https://e7.pngegg.com/pngimages/143/1008/png-clipart-arduino-integrated-development-environment-open-source-hardware-computer-software-installation-skin-miscellaneous-electronics.png"),
@@ -231,7 +234,7 @@ class _projectPageState extends State<projectPage> {
                 backWidget: _decorationContainerE(
                     LightColor.lightOrange2, -50, 30,
                     secondary: LightColor.seeBlue),
-                chipText1: "Water Quality Monitoring",
+                chipText1: "6 Channel Osciloscope",
                 isPrimaryCard: true,
                 imgPath:
                     "https://www.raspberrypi.org/wp-content/uploads/2011/10/Raspi-PGB001.png"),
@@ -503,7 +506,7 @@ class _projectPageState extends State<projectPage> {
     return Scaffold(
       backgroundColor: Color(0xfff4f6fd),
       body: Container(
-        padding: EdgeInsets.only(top: 52, left: 30, right: 30),
+        padding: EdgeInsets.only(top: 55, left: 30, right: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -512,16 +515,29 @@ class _projectPageState extends State<projectPage> {
               children: <Widget>[
                 Text(
                   'What do you want to \nmake today?',
-                  style: TextStyle(fontSize: 20, color: Colors.blueAccent),
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.blueAccent,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                          image: AssetImage('assets/image/profilePic.png'))),
-                )
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProfilePage(),
+                        ));
+                  },
+                  child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('assets/image/profilePic.png'))),
+                  ),
+                ),
               ],
             ),
             SizedBox(
@@ -536,23 +552,22 @@ class _projectPageState extends State<projectPage> {
                     height: 8,
                   ),
                   _categoryRow(
-                      "Beginner", LightColor.orange, LightColor.orange),
+                      "- BEGINNER -", LightColor.orange, LightColor.orange),
                   _featuredRowA(),
                   SizedBox(height: 18),
-                  _categoryRow(
-                      "Intermidiate", LightColor.purple, LightColor.darkpurple),
+                  _categoryRow("- INTERMEDIATE -", LightColor.purple,
+                      LightColor.darkpurple),
                   _featuredRowB(),
                   SizedBox(height: 18),
                   _categoryRow(
-                      "Advanced", LightColor.orange, LightColor.orange),
+                      "- ADVANCED -", LightColor.orange, LightColor.orange),
                   _featuredRowC(),
                   SizedBox(height: 5),
                 ],
               )),
             ),
             Container(
-              padding:
-                  EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 20),
+              padding: EdgeInsets.only(top: 17, left: 2, right: 2, bottom: 17),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -560,38 +575,58 @@ class _projectPageState extends State<projectPage> {
                     onPressed: () {
                       openMainPage();
                     },
-                    icon: Icon(
-                      Icons.developer_board,
+                    // icon: Icon(
+                    //   Icons.developer_board,
+                    //   color: Color(0xff2657ce).withOpacity(0.5),
+                    //   size: 40,
+                    // ),
+                    icon: Image.asset(
+                      "assets/image/teacher.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
-                    icon: Icon(
-                      Icons.lightbulb_outline,
+                    // icon: Icon(
+                    //   Icons.lightbulb_outline,
+                    //   color: Color(0xff2657ce),
+                    //   size: 40,
+                    // ),
+                    icon: Image.asset(
+                      "assets/image/repair-tools.png",
                       color: Color(0xff2657ce),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
                     onPressed: () {
                       openForumPage();
                     },
-                    icon: Icon(
-                      Icons.chat,
+                    // icon: Icon(
+                    //   Icons.chat,
+                    //   color: Color(0xff2657ce).withOpacity(0.5),
+                    //   size: 40,
+                    // ),
+                    icon: Image.asset(
+                      "assets/image/communication.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                   IconButton(
                     onPressed: () {
                       openAppendixPage();
                     },
-                    icon: Icon(
-                      Icons.memory,
+                    // icon: Icon(
+                    //   Icons.memory,
+                    //   color: Color(0xff2657ce).withOpacity(0.5),
+                    //   size: 40,
+                    // ),
+                    icon: Image.asset(
+                      "assets/image/controller.png",
                       color: Color(0xff2657ce).withOpacity(0.5),
-                      size: 40,
                     ),
+                    iconSize: 45,
                   ),
                 ],
               ),

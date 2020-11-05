@@ -1,4 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:onlinelearning/advancedtutorial/Advance_tutorial1_Page1.dart';
+import 'package:onlinelearning/advancedtutorial/Advance_tutorial2_Page1.dart';
+import 'package:onlinelearning/advancedtutorial/Advance_tutorial3_Page1.dart';
+import 'package:onlinelearning/advancedtutorial/Advance_tutorial4_Page1.dart';
+import 'package:onlinelearning/basictutorial/Hardware_Tutorial1_Page1.dart';
+import 'package:onlinelearning/basictutorial/Hardware_Tutorial2_Page1.dart';
+import 'package:onlinelearning/basictutorial/Software_Tutorial1_Page1.dart';
+import 'package:onlinelearning/basictutorial/Software_Tutorial2_Page1.dart';
+import 'package:onlinelearning/intermediatetutorial/Intermediate_tutorial1_Page1.dart';
+import 'package:onlinelearning/intermediatetutorial/Intermediate_tutorial2_Page1.dart';
+import 'package:onlinelearning/intermediatetutorial/Intermediate_tutorial3_Page1.dart';
+import 'package:onlinelearning/intermediatetutorial/Intermediate_tutorial4_Page1.dart';
 
 class CoursePage extends StatefulWidget {
   @override
@@ -8,11 +20,36 @@ class CoursePage extends StatefulWidget {
 class _CoursePageState extends State<CoursePage> {
   String chosenImg;
   String chosenTitle;
+  String courseTitle1;
+  String courseTitle2;
+  String courseTitle3;
+  String courseTitle4;
+  String courseSubtitle1;
+  String courseSubtitle2;
+  String courseSubtitle3;
+  String courseSubtitle4;
+  String pageName1;
+  String pageName2;
+  String pageName3;
+  String pageName4;
   @override
   Widget build(BuildContext context) {
     final Map arguments = ModalRoute.of(context).settings.arguments as Map;
     chosenImg = arguments['img'];
     chosenTitle = arguments['title'];
+    courseTitle1 = arguments['courseTitle1'];
+    courseTitle2 = arguments['courseTitle2'];
+    courseTitle3 = arguments['courseTitle3'];
+    courseTitle4 = arguments['courseTitle4'];
+    courseSubtitle1 = arguments['courseSubtitle1'];
+    courseSubtitle2 = arguments['courseSubtitle2'];
+    courseSubtitle3 = arguments['courseSubtitle3'];
+    courseSubtitle4 = arguments['courseSubtitle4'];
+    pageName1 = arguments['pageName1'];
+    pageName2 = arguments['pageName2'];
+    pageName3 = arguments['pageName3'];
+    pageName4 = arguments['pageName4'];
+
     return Scaffold(
         backgroundColor: Color(0xfff4f6fd),
         body: Container(
@@ -45,17 +82,12 @@ class _CoursePageState extends State<CoursePage> {
                           '$chosenTitle',
                           style: TextStyle(
                             color: Color(0xff2657ce),
-                            fontSize: 27,
+                            fontSize: 30,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
-                        Text(
-                          'Getting started',
-                          style: TextStyle(
-                              color: Colors.black.withOpacity(0.6),
-                              fontSize: 20),
-                        ),
                         SizedBox(
-                          height: 20,
+                          height: 25,
                         ),
                         Container(
                           padding: EdgeInsets.all(20),
@@ -125,14 +157,14 @@ class _CoursePageState extends State<CoursePage> {
                         ),
                         Column(
                           children: <Widget>[
-                            productListing('Introduction',
-                                'Introduction to Arduino', 'active'),
-                            productListing('Hardware',
-                                'Getting to know the Arduino', 'inactive'),
-                            productListing(
-                                'Arduino IDE', 'Place to program!', 'inactive'),
-                            productListing('Basic commands',
-                                'Running your first program', 'inactive')
+                            productListing('$courseTitle1', '$courseSubtitle1',
+                                'active', '$pageName1'),
+                            productListing('$courseTitle2', '$courseSubtitle2',
+                                'inactive', '$pageName2'),
+                            productListing('$courseTitle3', '$courseSubtitle3',
+                                'inactive', '$pageName3'),
+                            productListing('$courseTitle4', '$courseSubtitle4',
+                                'inactive', '$pageName4')
                           ],
                         ),
                       ],
@@ -143,7 +175,8 @@ class _CoursePageState extends State<CoursePage> {
             )));
   }
 
-  Column productListing(String title, String info, String activeOrInactive) {
+  Column productListing(
+      String title, String info, String activeOrInactive, String pageName) {
     return Column(
       children: <Widget>[
         SizedBox(
@@ -167,6 +200,9 @@ class _CoursePageState extends State<CoursePage> {
                       ? Colors.white
                       : Color(0xff2657ce),
                 ),
+                onPressed: () {
+                  navigateToSubPage(context, "$pageName");
+                },
               ),
             ),
             SizedBox(
@@ -178,12 +214,20 @@ class _CoursePageState extends State<CoursePage> {
                 Text(
                   '$title',
                   style: TextStyle(
+                    fontWeight: FontWeight.w600,
                     fontSize: 20,
                   ),
                 ),
+                SizedBox(
+                  height: 3,
+                ),
                 Text(
                   '$info',
-                  style: TextStyle(fontSize: 18, color: Colors.grey),
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.grey,
+                    fontStyle: FontStyle.italic,
+                  ),
                 )
               ],
             )
@@ -202,5 +246,119 @@ class _CoursePageState extends State<CoursePage> {
         ),
       ],
     );
+  }
+}
+
+Future navigateToSubPage(context, String page) async {
+  switch (page) {
+    case "Hardware1":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Hardware_Tutorial1_Page_1()));
+      }
+      break;
+    case "Hardware2":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Hardware_Tutorial2_Page_1()));
+      }
+      break;
+    case "Software1":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Software_Tutorial1_Page_1()));
+      }
+      break;
+    case "Software2":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Software_Tutorial2_Page_1()));
+      }
+      break;
+    case "Intermediate1":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Intermediate_Tutorial1_Page_1(),
+            ));
+      }
+      break;
+    case "Intermediate2":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Intermediate_Tutorial2_Page_1(),
+            ));
+      }
+      break;
+    case "Intermediate3":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Intermediate_Tutorial3_Page_1(),
+            ));
+      }
+      break;
+    case "Intermediate4":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Intermediate_Tutorial4_Page_1(),
+            ));
+      }
+      break;
+    case "Advanced1":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Advance_Tutorial1_Page_1(),
+            ));
+      }
+      break;
+    case "Advanced2":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Advance_Tutorial2_Page_1(),
+            ));
+      }
+      break;
+    case "Advanced3":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Advance_Tutorial3_Page_1(),
+            ));
+      }
+      break;
+    case "Advanced4":
+      {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Advance_Tutorial4_Page_1(),
+            ));
+      }
+      break;
+    default:
+      {
+        print("Invalid choice");
+      }
+      break;
   }
 }

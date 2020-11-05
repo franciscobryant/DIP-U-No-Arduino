@@ -62,7 +62,16 @@ class _pianoComponentsState extends State<pianoComponents> {
                         ),
                       );
                     },
-                    child: Text(component.name),
+                    child: Row(
+                      children: <Widget>[
+                        Text(component.name + "  "),
+                        Icon(
+                          Icons.photo_camera,
+                          size: 17,
+                          color: Color(0xff2657ce).withOpacity(0.6),
+                        )
+                      ],
+                    ),
                   ),
                   showEditIcon: false,
                   placeholder: false,
@@ -149,7 +158,7 @@ var components = <Component>[
       quantity: "1",
       image: "assets/image/LCD.JPG"),
   Component(
-      name: "Push Button switch 12mm​",
+      name: "Push Button 12mm​",
       quantity: "8",
       image: "assets/image/push buttons.JPG"),
   Component(
