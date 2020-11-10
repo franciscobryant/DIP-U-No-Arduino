@@ -90,7 +90,7 @@ class _appendixPageState extends State<appendixPage> {
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                            image: AssetImage('assets/image/profilePic.png'))),
+                            image: AssetImage('assets/image/john_orange.png'))),
                   ),
                 ),
               ],

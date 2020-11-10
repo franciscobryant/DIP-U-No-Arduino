@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:onlinelearning/colors/light_color.dart';
 
 class ProfilePage extends StatefulWidget {
   // This widget is the root of your application.
@@ -41,18 +42,18 @@ class ProfilePage_State extends State<ProfilePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 13,
+                height: 18,
               ),
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 10, 0, 5),
                 child: Container(
-                  width: 50.0,
-                  height: 50.0,
+                  width: 75.0,
+                  height: 75.0,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
                       fit: BoxFit.fill,
-                      image: AssetImage("assets/image/profilePic.png"),
+                      image: AssetImage("assets/image/john_orange.png"),
                     ),
                   ),
                 ),
@@ -61,12 +62,12 @@ class ProfilePage_State extends State<ProfilePage> {
                 height: 5,
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
+                padding: EdgeInsets.fromLTRB(0, 5, 0, 7),
                 child: Text(
                   "John Orange",
                   style: TextStyle(
                       color: Colors.blueGrey[800],
-                      fontSize: 18.0,
+                      fontSize: 20.0,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -89,12 +90,58 @@ class ProfilePage_State extends State<ProfilePage> {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 18,
+              ),
+              InkWell(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    child: new AlertDialog(
+                      content: Text(
+                        "Username   : johnorange \nPassword    : Arduino.1",
+                        style: TextStyle(
+                          color: Colors.indigo,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    boxShadow: <BoxShadow>[
+                      BoxShadow(
+                          offset: Offset(0, 5),
+                          blurRadius: 10,
+                          color: LightColor.lightpurple.withAlpha(30))
+                    ],
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                  ),
+                  child: Text(
+                    "Quiz Credentials",
+                    style: TextStyle(
+                      color: (Color(0xffe9eefa) == Color(0xffe9eefa)
+                          ? Color(0xff2657ce)
+                          : Colors.white),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 23,
               ),
               Container(
+                width: 270,
                 height: 200.0,
-                width: double.maxFinite,
                 decoration: BoxDecoration(
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        offset: Offset(0, 5),
+                        blurRadius: 10,
+                        color: LightColor.lightpurple.withAlpha(30))
+                  ],
                   image: DecorationImage(
                     fit: BoxFit.fitHeight,
                     image:
@@ -103,15 +150,26 @@ class ProfilePage_State extends State<ProfilePage> {
                 ),
               ),
               SizedBox(
-                height: 15,
+                height: 25,
               ),
-              _progress(context, "Overall", "", 40, 13),
+              _progress(context, "Overall", 100, 45,
+                  "assets/image/Certificate Badge Transparent.png"),
+              _progress(context, "Beginner", 100, 100,
+                  "assets/image/Beginner Badge Opaque.png"),
               _progress(
-                  context, "Basic", "assets/image/basic_badges.png", 10, 10),
-              _progress(context, "Intermediate",
-                  "assets/image/intemediate_badges.png", 10, 3),
-              _progress(context, "Advanced", "assets/image/advanced_badges.png",
-                  10, 0),
+                context,
+                "Intermediate",
+                100,
+                40,
+                "assets/image/Intermediate Badge Transparent.png",
+              ),
+              _progress(
+                context,
+                "Advanced",
+                100,
+                0,
+                "assets/image/Advanced Badge Transparent.png",
+              ),
             ],
           ),
         ),
@@ -119,54 +177,84 @@ class ProfilePage_State extends State<ProfilePage> {
     );
   }
 
-  _progress(BuildContext context, var name, String path, var max, var value) {
-    return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.fromLTRB(20.0, 0, 20.0, 5.0),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                flex: 1,
-                child: Container(
-                  child: Text(name,
-                      style: TextStyle(
-                          color: Colors.grey, fontWeight: FontWeight.bold)),
+  _progress(BuildContext context, var name, var max, var value, String path) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Expanded(
+            flex: 3,
+            child: Container(
+              height: 80,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(path),
                 ),
               ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  child: Image.asset(path,
-                      width: 40.0, height: path.isEmpty ? 0.0 : 40.0),
-                ),
-              ),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  alignment: Alignment.centerRight,
-                  child: Text("$value / $max",
-                      style: TextStyle(
-                          color: Colors.grey, fontWeight: FontWeight.bold)),
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
-        Container(
-          padding: EdgeInsets.fromLTRB(20.0, 0, 20.0, 5.0),
-          width: double.maxFinite,
-          height: 25.0,
-          child: LinearPercentIndicator(
-            lineHeight: 25.0,
-            percent: (value / max),
-            progressColor: Colors.blue,
+          Expanded(
+            flex: 7,
+            child: Container(
+              padding: EdgeInsets.only(
+                left: 10,
+                right: 30,
+              ),
+              height: 80,
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          child: Text(
+                            name,
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey[700],
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            "$value %",
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.grey[700],
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    width: double.maxFinite,
+                    height: 25.0,
+                    child: LinearPercentIndicator(
+                      lineHeight: 25.0,
+                      percent: (value / max),
+                      progressColor: Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

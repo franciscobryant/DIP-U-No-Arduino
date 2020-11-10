@@ -64,7 +64,7 @@ class _mainPageState extends State<mainPage> {
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                            image: AssetImage('assets/image/profilePic.png'))),
+                            image: AssetImage('assets/image/john_orange.png'))),
                   ),
                 ),
               ],
@@ -160,25 +160,6 @@ class _mainPageState extends State<mainPage> {
                             SizedBox(
                               height: 20,
                             ),
-                            // courseWidget(
-                            //   'Microcontroller',
-                            //   'Learn more about them!',
-                            //   'img4',
-                            //   Color(0xffe9eefa),
-                            //   Colors.white,
-                            //   'Hardware 1',
-                            //   'Introduction to Arduino',
-                            //   'Hardware1',
-                            //   'Hardware 2',
-                            //   'Getting to know Arduino',
-                            //   'Hardware2',
-                            //   'Software 1',
-                            //   'Place to program!',
-                            //   'Software1',
-                            //   'Software 2',
-                            //   'Running your first program',
-                            //   'Software2',
-                            // ),
                             Container(
                               padding: EdgeInsets.only(
                                   top: 20, left: 20, right: 20, bottom: 10),

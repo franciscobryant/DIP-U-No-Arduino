@@ -535,7 +535,7 @@ class _projectPageState extends State<projectPage> {
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                            image: AssetImage('assets/image/profilePic.png'))),
+                            image: AssetImage('assets/image/john_orange.png'))),
                   ),
                 ),
               ],
