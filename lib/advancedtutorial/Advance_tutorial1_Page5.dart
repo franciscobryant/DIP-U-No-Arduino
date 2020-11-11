@@ -34,7 +34,7 @@ class _Advance_Tutorial1_Page_5State extends State<Advance_Tutorial1_Page_5> {
           ),
         ),
         body: Center(
-          child: Image.asset('assets/image/Advance_Slide40.jpg'), //   <-- image
+          child: Image.asset('assets/image/Slide40.jpg'), //   <-- image
         ),
         floatingActionButton: FloatingActionButton(
           child: const Text('Next'),

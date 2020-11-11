@@ -92,44 +92,35 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          Stack(
-            children: <Widget>[
-              Container(
-                alignment: Alignment.bottomCenter,
-                height: MediaQuery.of(context).size.height * 0.5,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image:
-                            AssetImage('assets/image/arduino-background.png'),
-                        fit: BoxFit.cover)),
-              ),
-              Positioned(
-                bottom: 50,
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: InkWell(
-                    onTap: () {
-                      openMainPage();
-                    },
-                    child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(40)),
-                      ),
-                      child: Text(
-                        'Continue',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w700),
-                      ),
-                    ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            height: MediaQuery.of(context).size.height * 0.45,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/image/U-No-Arduino Logo.png'),
+                    fit: BoxFit.cover)),
+          ),
+          Container(
+            margin: EdgeInsets.only(bottom: 50),
+            child: Center(
+              child: InkWell(
+                onTap: () {
+                  openMainPage();
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(40)),
+                  ),
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                   ),
                 ),
-              )
-            ],
+              ),
+            ),
           )
         ],
       ),
