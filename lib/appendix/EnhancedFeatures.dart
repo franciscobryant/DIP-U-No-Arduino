@@ -286,6 +286,9 @@ class _enhancedFeaturesState extends State<enhancedFeatures> {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
                   ],
                 ),
               ),

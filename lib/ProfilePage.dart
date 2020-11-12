@@ -170,6 +170,9 @@ class ProfilePage_State extends State<ProfilePage> {
                 0,
                 "assets/image/Advanced Badge Transparent.png",
               ),
+              SizedBox(
+                height: 30,
+              ),
             ],
           ),
         ),

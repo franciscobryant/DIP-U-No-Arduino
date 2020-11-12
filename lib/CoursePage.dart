@@ -167,6 +167,9 @@ class _CoursePageState extends State<CoursePage> {
                                 'inactive', '$pageName4')
                           ],
                         ),
+                        SizedBox(
+                          height: 30,
+                        ),
                       ],
                     ),
                   ),

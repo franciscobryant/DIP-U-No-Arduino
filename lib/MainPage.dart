@@ -69,6 +69,9 @@ class _mainPageState extends State<mainPage> {
                 ),
               ],
             ),
+            SizedBox(
+              height: 25,
+            ),
             Expanded(
               child: SingleChildScrollView(
                   child: Column(

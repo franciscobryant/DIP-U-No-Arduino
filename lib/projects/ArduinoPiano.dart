@@ -315,6 +315,9 @@ class _arduinoPianoState extends State<arduinoPiano> {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 45,
+                    ),
                   ],
                 ),
               ),

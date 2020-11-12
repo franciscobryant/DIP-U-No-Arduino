@@ -96,7 +96,7 @@ class _appendixPageState extends State<appendixPage> {
               ],
             ),
             SizedBox(
-              height: 15,
+              height: 25,
             ),
             Expanded(
               child: SingleChildScrollView(

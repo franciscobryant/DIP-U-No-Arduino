@@ -34,7 +34,7 @@ class _Hardware_Tutorial2_Page_3State extends State<Hardware_Tutorial2_Page_3> {
           ),
         ),
         body: Center(
-          child: Image.asset('assets/image/Hardware_Slide8.jpg'), //   <-- image
+          child: Image.asset('assets/image/Slide8.jpg'), //   <-- image
         ),
         floatingActionButton: FloatingActionButton(
           child: const Text('Next'),

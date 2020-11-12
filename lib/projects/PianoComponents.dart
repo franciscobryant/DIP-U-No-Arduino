@@ -91,7 +91,7 @@ class _pianoComponentsState extends State<pianoComponents> {
     return Scaffold(
       backgroundColor: Color(0xfff4f6fd),
       body: Container(
-        padding: EdgeInsets.only(top: 40, left: 30, right: 30),
+        padding: EdgeInsets.only(top: 40),
         child: Row(
           children: [
             Expanded(
@@ -100,7 +100,7 @@ class _pianoComponentsState extends State<pianoComponents> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(bottom: 5),
+                      margin: EdgeInsets.only(bottom: 5, left: 30),
                       padding: EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(20)),

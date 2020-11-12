@@ -285,6 +285,9 @@ class _entryLevelState extends State<entryLevel> {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
                   ],
                 ),
               ),

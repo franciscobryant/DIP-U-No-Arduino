@@ -286,6 +286,9 @@ class _ioTState extends State<ioT> {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 30,
+                    ),
                   ],
                 ),
               ),

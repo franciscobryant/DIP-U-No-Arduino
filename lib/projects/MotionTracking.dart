@@ -316,6 +316,9 @@ class _motionTrackingState extends State<motionTracking> {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 45,
+                    ),
                   ],
                 ),
               ),
