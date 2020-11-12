@@ -37,7 +37,7 @@ class _motionComponentsState extends State<motionComponents> {
           tooltip: "To display the names of the components",
         ),
         DataColumn(
-          label: Text("Last Name"),
+          label: Text("Quantity"),
           numeric: false,
           onSort: (i, b) {
             print("$i $b");
