@@ -1,10 +1,9 @@
-# Online Course Application
-A new Flutter application for daily grocery. 
-Design Credit : https://www.uplabs.com/posts/online-learning-apps
+# U-No-Arduino
 
-# Tutorial
-Tutorial link : https://youtu.be/QFMwvZUb1xo
+A mobile application built using Flutter framework for learning all the things you need to know about Arduino. The application consists of Tutorals, Projects, Forum, and Appendix features. The screenshot of the app will be shown below.
 
-## Author
-If you like my work, please consider supporting me with your kind contribution. Thank you!!!
-<div><a href=https://paypal.me/kaushikchandru?locale.x=en_GB>paypal </a></div>
+The app is currently not published yet on App Store / Play Store, but if you want to test it out you can download this project and run it on the emulator on your computer. Do note that you need to install Flutter and some other applications first beforehand. 
+
+A detailed guideline on flutter installation can be found here https://flutter.dev/docs/get-started/install
+
+
